@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Pyari Guddiyaa</title>
+    <style>
+        /* Full-screen cinematic background */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Georgia', serif;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* Overlay for cinematic effect */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 3em;
+            font-family: 'Cursive', 'Georgia', serif;
+            color: #ff9ec2;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            margin-bottom: 40px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Glow animation for heading */
+        @keyframes glow {
+            from { text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+            to { text-shadow: 2px 2px 20px rgba(255, 158, 194, 1); }
+        }
+
+        /* Text container */
+        #text {
+            font-size: 1.8em;
+            max-width: 800px;
+            line-height: 1.6;
+            opacity: 0; /* initially invisible */
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Meri Pyari Guddiyaa <span style="font-size:0.6em;">"This is for you"</span></h1>
+        <div id="text">
+            Tum meri zindagi ki sabse khoobsurat chhavi ho, aur har pal mere dil ko ek nayi khushi deti ho.
+        </div>
+    </div>
+
+    <script>
+        // Text typing effect word by word
+        const textContainer = document.getElementById('text');
+        const fullText = textContainer.innerText;
+        const words = fullText.split(' ');
+        textContainer.innerText = '';
+        textContainer.style.opacity = 1;
+
+        let i = 0;
+        function typeWord() {
+            if (i < words.length) {
+                textContainer.innerHTML += words[i] + ' ';
+                i++;
+                setTimeout(typeWord, 400); // adjust speed here
+            }
+        }
+
+        window.onload = () => {
+            typeWord();
+        };
+    </script>
+</body>
+</html>
