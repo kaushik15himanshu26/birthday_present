@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Scene</title>
     <style>
-        /* Full screen and cinematic vibe */
+        /* Scene container */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,7 +13,7 @@
             height: 100%;
             overflow: hidden;
             font-family: 'Georgia', serif;
-            background: #000; /* fallback */
+            background: #000;
         }
 
         .scene {
@@ -39,7 +39,7 @@
             top:0; left:0;
             width: 100%;
             height: 100%;
-            background: rgba(255,182,193,0.15); /* soft pink glow */
+            background: rgba(255,182,193,0.15);
             z-index: 1;
         }
 
@@ -100,6 +100,26 @@
             to { opacity: 1; }
         }
 
+        /* Back button */
+        .back-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 25px;
+            font-size: 1.2em;
+            color: #ff9ec2;
+            border: 2px solid #ff9ec2;
+            border-radius: 12px;
+            background: transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #ff9ec2;
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +138,8 @@
         <div id="birthday-text">
             Happy happy happy and the happiest birthday to you my happy child
         </div>
+
+        <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
     </div>
 
     <script>
@@ -133,11 +155,11 @@
             if (i < words.length) {
                 const span = document.createElement('span');
                 span.className = 'word';
-                span.style.animationDelay = (i * 0.5) + 's'; // staggered fade-in
+                span.style.animationDelay = (i * 0.5) + 's';
                 span.innerText = words[i] + ' ';
                 textContainer.appendChild(span);
                 i++;
-                setTimeout(typeWord, 300); // speed between words
+                setTimeout(typeWord, 300);
             }
         }
 
