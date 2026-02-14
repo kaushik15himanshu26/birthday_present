@@ -57,14 +57,33 @@
             line-height: 1.6;
             opacity: 0; /* initially invisible */
         }
+
+        /* Link styling */
+        .next-page {
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .next-page:hover {
+            background: #ff9ec2;
+            color: #000;
+            border-color: #ff9ec2;
+        }
     </style>
 </head>
 <body>
     <div class="overlay">
-        <h1>Meri Pyari Guddiyaa <span style="font-size:0.6em;">"This is for you"</span></h1>
+        <h1>Click the heart of Kaushik ❤️</h1>
         <div id="text">
             Tum meri zindagi ki sabse khoobsurat chhavi ho, aur har pal mere dil ko ek nayi khushi deti ho.
         </div>
+        <a href="page2.html" class="next-page">Go to Next Page</a>
     </div>
 
     <script>
@@ -74,7 +93,6 @@
         const words = fullText.split(' ');
         textContainer.innerText = '';
         textContainer.style.opacity = 1;
-        
 
         let i = 0;
         function typeWord() {
@@ -87,9 +105,7 @@
 
         window.onload = () => {
             typeWord();
-            
         };
-         <a href="page2.html" style="margin-top:40px; font-size:1.2em; color:#fff; text-decoration:none; border:1px solid #fff; padding:10px 20px; border-radius:10px;">Next Page</a>
     </script>
 </body>
 </html>
