@@ -57,7 +57,36 @@
             line-height: 1.6;
             opacity: 0; /* initially invisible */
         }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Meri Pyari Guddiyaa <span style="font-size:0.6em;">"This is for you"</span></h1>
+        <div id="text">
+            Tum meri zindagi ki sabse khoobsurat chhavi ho, aur har pal mere dil ko ek nayi khushi deti ho.
+        </div>
+    </div>
 
-        /* Button to go to page2 */
-        .next-btn {
-            margin-top: 50px;
+    <script>
+        // Text typing effect word by word
+        const textContainer = document.getElementById('text');
+        const fullText = textContainer.innerText;
+        const words = fullText.split(' ');
+        textContainer.innerText = '';
+        textContainer.style.opacity = 1;
+
+        let i = 0;
+        function typeWord() {
+            if (i < words.length) {
+                textContainer.innerHTML += words[i] + ' ';
+                i++;
+                setTimeout(typeWord, 400); // adjust speed here
+            }
+        }
+
+        window.onload = () => {
+            typeWord();
+        };
+    </script>
+</body>
+</html>
