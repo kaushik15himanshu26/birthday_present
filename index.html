@@ -58,54 +58,6 @@
             opacity: 0; /* initially invisible */
         }
 
-        /* Link styling */
-        .next-page {
-            margin-top: 40px;
-            font-size: 1.2em;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .next-page:hover {
-            background: #ff9ec2;
-            color: #000;
-            border-color: #ff9ec2;
-        }
-    </style>
-</head>
-<body>
-    <div class="overlay">
-        <h1>Click the heart of Kaushik ❤️</h1>
-        <div id="text">
-            Tum meri zindagi ki sabse khoobsurat chhavi ho, aur har pal mere dil ko ek nayi khushi deti ho.
-        </div>
-        <a href="page2.html" class="next-page">Go to Next Page</a>
-    </div>
-
-    <script>
-        // Text typing effect word by word
-        const textContainer = document.getElementById('text');
-        const fullText = textContainer.innerText;
-        const words = fullText.split(' ');
-        textContainer.innerText = '';
-        textContainer.style.opacity = 1;
-
-        let i = 0;
-        function typeWord() {
-            if (i < words.length) {
-                textContainer.innerHTML += words[i] + ' ';
-                i++;
-                setTimeout(typeWord, 400); // adjust speed here
-            }
-        }
-
-        window.onload = () => {
-            typeWord();
-        };
-    </script>
-</body>
-</html>
+        /* Button to go to page2 */
+        .next-btn {
+            margin-top: 50px;
